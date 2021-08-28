@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import * as constants from "../constants";
-import { TextField, Button, Typography, Divider } from '@material-ui/core';
+import { TextField, Button, Typography, Divider, Link } from '@material-ui/core';
 
 import EthereumFaucet from "../abis/EthereumFaucet.json";
 import { getEther, donateEther } from "../utils";
@@ -28,8 +28,13 @@ function RequestForm() {
     return (
         <div className="App" style={{ padding: "50px" }}>
             <Typography variant="h4">
-                Rinkeby Faucet
+                Game Prediction!
             </Typography>
+
+            <Link>New Game</Link> <Divider></Divider>
+            <Link>Ongoing Games</Link><Divider></Divider>
+            <Link>Make Prediction</Link><Divider></Divider>
+            <Link>Withdraw My Earnings!</Link><Divider></Divider>
 
             <TextField fullWidth onChange={e => setWalletAddr(e.target.value)} label="Wallet Address" /><br /><br />
             <TextField fullWidth onChange={e => setEtherReq(e.target.value)} type="number" label="Ethers Required" /><br /><br />
